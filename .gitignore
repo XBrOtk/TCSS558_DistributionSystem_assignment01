@@ -1,3 +1,6 @@
 # vscode file
 */.vscode
 */__pycache__
+readme.txt
+*.tar.gz
+*.tar

@@ -12,7 +12,7 @@ docker-server includes Server source code (Server.py) for TCP&UDP, Pyro source c
 ## Deployment
 ------
 
-This project should deploy on Docker 18.9.7 and python 3.6.9. The installation of Docker can be found on previous [handout](https://faculty.washington.edu/wlloyd/courses/tcss558/assignments/TCSS558_w2020_Homework_0.pdf).  
+This project should deploy on Docker 18.9.7 and python 3.6.9.  The installation of Docker can be found on previous [handout](https://faculty.washington.edu/wlloyd/courses/tcss558/assignments/TCSS558_w2020_Homework_0.pdf). I deployed this project on AWS EC2 Ubuntu with t2.micro instance and my test result is also based on that environment. The code I provide below works well on AWS EC2 Ubuntu. Other operating system cannot garuantee their funtionality.
 
 
 ### Docker setting
@@ -24,6 +24,11 @@ sudo docker network create -d bridge test
 ```
 
 In this way, we can use a container's name as its IP address from another container that under the same sub-network. There is no need to use `sudo docker exec -it container_name bash` and `ifconfig` to check the IP address for the container.
+
+You can delete the network created for this project
+```bash
+sudo docker network remove test
+```
 
 ### Build docker image
 
